@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>EDG宣传</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+		<div class="container">
+			<div class="box box1">
+				<video src="res/edg1.mp4" autoplay="autoplay" loop="loop" muted="muted"></video>
+				<div class="content">
+					<h2>拼搏</h2>
+				</div>
+			</div>
+			<div class="box box2">
+				<video src="res/edg2.mp4" autoplay="autoplay" loop="loop" muted="muted"></video>
+				<div class="content">
+					<h2>努力</h2>
+				</div>
+			</div>
+			<div class="box box3">
+				<video src="res/edg3.mp4" autoplay="autoplay" loop="loop" muted="muted"></video>
+				<div class="content">
+					<h2>成功</h2>
+				</div>
+			</div>
+		</div>
+		<a href="index.html" class="pos">返回主页</a>
+		<script >
+			let box=document.querySelectorAll(".box");
+			box.forEach(popup=>popup.addEventListener("click",()=>{
+				popup.classList.toggle('active')
+			}))
+		</script>
+	</body>
+</html>
