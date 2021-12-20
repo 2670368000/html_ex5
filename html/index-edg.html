@@ -7,7 +7,7 @@
 	html,body{
 		width: 100%;
 		height: 100%;
-			  background-image:url("res/20211026101744255.jpg");
+			  background-image:url("pic/20211026101744255.jpg");
 			  background-size:cover;
 			  overflow: hidden;
 	}
@@ -27,10 +27,11 @@
 		background-color: dimgray;
 		position: absolute;
 		left: 50%;
-		top:50%;
+		margin-top: 35%;
 		transform: translate(-50%,-50%);
 		display: flex;
 		justify-content: space-between;	
+		z-index: 1;
 		}
 	.photo img{
 		width: 360px;
@@ -57,14 +58,49 @@
 			width: 35px;
 			height: 35px;
 		}
+		.view{
+		width: 856px;
+		height: 480px;
+		background-color: dimgray;
+		position: absolute;
+		left: 50%;
+		top:90px;
+		transform: translate(-50%,-50%);
+		display: flex;
+		justify-content: space-between;
+		z-index:2;
+		
+		
+		}
+		.back{
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			cursor: pointer;
+		}
+		video{
+		width: 856px;
+			height: 480px;
+		}
 	</style>
-  </head>
-  <body>
-	 
+  <body style="padding: 0px; margin: 0px;">
+	 <div class="view">
+		 <div><img class="back" src="pic/R-C.jpg">
+		 <video id="vo" src="pic/S11总决赛 EDG 队内语音 第四局生死局_哔哩哔哩bilibili_英雄联盟_赛事.mp4" 
+		 controls="controls"
+		 poster="pic/O3P)XL@[%25%25]3PGW6Z~OBAYD.png"></video>
+			 <br/><br/>
+		 <input type="button" value="播放" onclick="hello1()" />
+		 <input type="button" value="暂停" onclick="hello2()" />
+		 <input type="button" value="设置进度" onclick="hello3()" />
+		 <input type="button" value="静音" onclick="hello4()" />
+		 </div>
+	 </div>
 	  <div class="bg"></div>
 	  <div class="cotnent">
-		  <a href="index.html"><img class= "return" src="res/R-C.jpg"></a>
-		  <div class="photo"><img src="res/20211115191843.png"/></div>
+		  <a href="index.html"><img class= "return" src="pic/R-C.jpg"></a>
+		  <a href="edg xuanc.html"><div class="photo" ><img src="pic/20211115191843.png"></a>
+		  </div>
 		  <div class="msg">
 			  <h2>EDG夺得S11英雄联盟总冠军</h2>
 			  <div>一场比赛的胜利离不开对内友好而有效的沟通，在这次的比赛中。我们的EDG战队一路披荆斩棘，最终夺得了英雄联盟S11的总冠军<br/>
@@ -72,6 +108,7 @@
 			  在后续爆出的对内语音里，我们可以发现，在从头到尾的比赛里，<br/>
 			  我们的选手都在不断的沟通，这不但让团队配合更加默契，也让大家的关系更加和睦。而一个团结配合良好的队伍是取得胜利的必要条件。<br/>
 			  假如没有良好的交流，我们的选手也许个个技术非凡，但在缺乏团队配合的情况下我想最终的结果也会不同。<br/>
+			  《点击图片查看宣传视频》
 		   </div>
 		</div>
 	  </div>
