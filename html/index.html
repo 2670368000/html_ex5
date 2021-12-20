@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>文明游戏，健康上网</title>
+		<style type="text/css">	
+			html,body{
+				width:1920px;
+				height:1080px;
+				margin:0px;
+				overflow:hidden;
+			}
+		    #bg{
+		    	display: flex;
+		    	position: absolute;
+		    	left: 0%;
+		    	top: 0%;
+		    	width:100%;
+		    	height:100%;
+		    	margin:0px;
+		    	background-image: url(res/bg.jpg);
+		    	background-size:cover;
+				transition: all 1.5s ease;
+		    }
+			#page{
+				display: flex;
+				position: absolute;
+				left: 0%;
+				top: 100%;
+				width:100%;
+				height:100%;
+				margin:0px;
+				background-image: url(res/nextpage.png);
+				background-size:cover;
+				transition: all 1.5s ease;
+			}
+			.title_font{
+				position: absolute;
+				top: 25%;
+				z-index: 0;
+				display: flex;
+				width: 100%;
+				justify-content: center;
+				align-items: center;
+				font-size: 6rem;
+				color: transparent;
+				text-shadow:
+				  0px 0px 1px rgba(255, 255, 255, .9),
+				  0px 4px 4px rgba(0, 0, 0, .05);
+				letter-spacing: .2rem;
+				font-weight: bold;
+			}
+			.button{
+				position: absolute;
+				top: 50%;
+				left: 45%;
+				z-index: 0;
+				transition: all .3s ease;
+				width: 200px;
+				height: 200px;
+			}
+			.button:hover{
+				transform: scale(1.2);
+			}
+			.tag_xia{
+				position: absolute;
+				top: 80%;
+				left: 45%;
+				z-index: 0;
+				transition: all .3s ease;
+				width: 200px;
+				height: 150px;
+			}
+			.tag_xia:hover{
+				transform: scale(1.1);
+			}
+			.tag_shang{
+				position: absolute;
+				top: 5%;
+				left: 45%;
+				z-index: 0;
+				transition: all .3s ease;
+				width: 200px;
+				height: 150px;
+			}
+			.tag_shang:hover{
+				transform: scale(1.1);
+			}
+			.boy{
+				position: absolute;
+				top: 25%;
+				left: 10%;
+				z-index: 0;
+				transition: all .3s ease;
+				width: 700px;
+				height: 700px;
+			}
+			.boy:hover{
+				transform: scale(1.1);
+			}
+			.edg{
+				position: absolute;
+				top: 25%;
+				right: 10%;
+				z-index: 0;
+				transition: all .3s ease;
+				width: 700px;
+				height: 700px;
+			}
+			.edg:hover{
+				transform: scale(1.1);
+			}
+		</style>
+		<script src="/jquery-1.8.3.min.js"></script>
+		<script type="text/javascript">
+			function nextpage(){
+				document.getElementById("bg").style.top="-100%";
+				document.getElementById("page").style.top="0%";
+			}
+			function backpage(){
+				document.getElementById("bg").style.top="0%";
+				document.getElementById("page").style.top="100%";
+			}
+		</script>
+		
+		<link rel="stylesheet" href="css/main.css" type="text/css">
+	</head>
+
+	<body>
+		<div id="bg" onmousewheel="nextpage()">
+			<div class="title_font">文明游戏,健康上网</div>
+			<a href="index-video.html"><img class="button" src="res/button.png" title="宣传视频"></a>
+			<img class="tag_xia" src="res/tag_xia.png" onclick="nextpage()" title="正反案例">
+		</div>
+		<div id="page" onmousewheel="backpage()">
+			<img class="tag_shang" src="res/tag_shang.png" onclick="backpage()" title="返回主页">
+			<a href="index-boy.html"><img class="boy" src="res/boy_title.png" title="反面案例"></a>
+			<a href="index-edg.html"><img class="edg" src="res/edg_title.png" title="正面案例"></a>
+		</div>
+	</body>
+</html>
