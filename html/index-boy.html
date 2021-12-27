@@ -67,7 +67,7 @@
 		        margin-left: 650px;
 		    }
 		    .button2{
-		        margin-left: 50px;
+		        margin-left: 200px;
 		    }
 		    .vo{
 		    			  margin-left: 350px;
@@ -126,74 +126,16 @@
         
 	    </style>
 </head>
-<script type="text/javascript">
-      var index = 0;//当前显示第几屏。0代表第1屏
-            
-            window.onload = function(){
-          	  
-          	  //为li添加鼠标点击事件
-          	  for(var i=0;i<=3;i++){
-          		  document.getElementById("li"+i).onclick = function(){
-          			  
-          			  index = this.id.replace("li","");//通过id获取当前显示第几屏
-          			  
-          			  pageAnimate();
-          		  }
-          	  }
-          	  
-          	  //窗口大小重置
-          	  window.onresize = function(){
-          		  //暂时去掉mainDiv的过渡动画
-          		  document.getElementById("mainDiv").style.transition = "all 0s ease";
-          		  
-          		  pageAnimate();//切屏
-          		  
-          		  //重新加上mainDiv的过渡动画
-          		  window.setTimeout(function(){
-      				  document.getElementById("mainDiv").style.transition = "all 1s ease";
-      			  },10);
-          	  }
-            }
-            //设置显示哪一屏，并设置右浮动按扭显示样式
-            function pageAnimate(){
-          	  
-          	  var offsetHeight = document.body.offsetHeight;
-          	  document.getElementById("mainDiv").style.top = -(offsetHeight * index)+"px";
-      		  
-          	  //设置右则浮动按扭的显示样式
-      		  for(var i=0;i<=2;i++){
-      			  document.getElementById("li"+i).style.backgroundColor = "#3D3D3D";
-      		  }
-      		  document.getElementById("li"+index).style.backgroundColor = "#5555ff";
-            }
-			
-			function hello1(){
-			      document.getElementById("vo1").play();
-			  }
-			  function hello2(){
-			      document.getElementById("vo1").pause();
-			  }
-			  function hello3(){
-			      document.getElementById("vo1").currentTime += 10;
-			  }
-			  function hello4(){
-			      document.getElementById("vo1").currentTime -= 10;
-			  }
-			  function hello5(){
-			      document.getElementById("vo1").muted = !document.getElementById("vo").muted;
-			  }
-    </script>
 <body>
 	<div id="mainDiv">
 	      <div class="page1">
 			  <a id = "sp" class="span1" href="index.html">返回主页</a>
+			  <br>
+			  <a id = "sp" class="span1" href="badguy.html">观看宣传视频</a>
 			    	<br/><br/>
 			    	<video class = "vo" id = "vo1" src="res/boy1.mp4" controls="controls" poster = "res/boy.png"></video>
-			    	<input class = "button1" type="button" value="播放" onclick="hello1()" />
-			    	<input class = "button2" type="button" value="暂停" onclick="hello2()" />
-			        <input class = "button2" type="button" value="快进" onclick="hello3()" />
-			    	<input class = "button2" type="button" value="后退" onclick="hello4()" />
-			    	<input class = "button2" type="button" value="静音" onclick="hello5()" />
+			    	<input class = "button1" type="button" value="播放"  />
+			    	<input class = "button2" type="button" value="暂停"  />
 			    	<p class = "class1" >德国boy</p>
 			    	<p class = "class2">相信大家都知道这是谁，他就是当初红极一时的德国boy，他的这段表演可谓是游怒证的典型代表。随着这几年游戏市场的火爆，越来越多的人开始下载游玩不同类型的游戏，也因此让更多人在不知不觉中就得了以上所说的游怒症，但是游怒症并不是病，只是心理或者心态的问题更多一点吧！</p>
 		  </div>
@@ -223,6 +165,58 @@
 	        <li id="li2" class = "continer"><div>如何改善</div></li>
 	      </ul>
 	    </div>
+		<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script type="text/javascript">
+		      var index = 0;//当前显示第几屏。0代表第1屏
+		            
+		            window.onload = function(){
+		          	  
+		          	  //为li添加鼠标点击事件
+		          	  for(var i=0;i<3;i++){
+		          		  document.getElementById("li"+i).onclick = function(){
+		          			  
+		          			  index = this.id.replace("li","");//通过id获取当前显示第几屏
+		          			  
+		          			  pageAnimate();
+		          		  }
+		          	  }
+		          	  
+		          	  //窗口大小重置
+		          	  window.onresize = function(){
+		          		  //暂时去掉mainDiv的过渡动画
+		          		  $("#mainDiv").css("transition","all 0s ease");
+		          		  
+		          		  pageAnimate();//切屏
+		          		  
+		          		  //重新加上mainDiv的过渡动画
+		          		  window.setTimeout(function(){
+		      				  $("#mainDiv").css("transition","all 1s ease");
+		      			  },10);
+		          	  }
+		            }
+		            //设置显示哪一屏，并设置右浮动按扭显示样式
+		            function pageAnimate(){
+		          	  
+		          	  var offsetHeight = document.body.offsetHeight;
+		          	  $("#mainDiv").css("top",-(offsetHeight * index)+"px");
+		      		  
+		          	  //设置右则浮动按扭的显示样式
+		      		  for(var i=0;i<=2;i++){
+		      			  $("#"+"li"+i).css("background-color","#3D3D3D");
+		      		  }
+		      		     $("#"+"li"+index).css("background-color","#5555ff");
+		            }
+					
+					  
+					  $(".button1").on("click",function(){
+							$("#vo1").trigger('play');
+						  }
+					  );    
+				      $(".button2").on("click",function(){
+				      		$("#vo1").trigger('pause');
+				      						  }
+				      );  
+		    </script>
 </body>
 </html>
 
