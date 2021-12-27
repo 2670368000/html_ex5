@@ -83,14 +83,50 @@
 			height: 480px;
 		}
 	</style>
+	 <script type="text/javascript" src="res/jquery/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript">
+	$('vo').click(function(){
+	
+	   if($(this).hasClass('pause')){
+	
+	      $('video').tigger('play');
+	
+	      $(this).removeClass('pause');
+	
+	      $(this).addClass('play');
+	
+	    }else{
+	
+	      $('vo').tigger('pause');
+	
+	      $(this).removeClass('play');
+	
+	      $(this).addClass('pause');
+	
+	    }
+	
+	})
+	      function hello1(){
+	        document.getElementById("vo").play();
+	      }
+	      function hello2(){
+	        document.getElementById("vo").pause();
+	      }
+	      function hello3(){
+	        document.getElementById("vo").currentTime = 78;
+	      }
+	      function hello4(){
+	        document.getElementById("vo").muted = !document.getElementById("vo").muted;
+	      }
+	    </script>
   <body style="padding: 0px; margin: 0px;">
 	 <div class="view">
 		 <div><img class="back" src="res/R-C.jpg">
-		 <video id="vo" src="res/S11总决赛 EDG 队内语音 第四局生死局_哔哩哔哩bilibili_英雄联盟_赛事.mp4" 
-		 controls="controls"
+		 <video id="vo" src="res/edg.mp4" 
+		 //controls="controls"
 		 poster="res/O3P)XL@[%25%25]3PGW6Z~OBAYD.png"></video>
 			 <br/><br/>
-		 <input type="button" value="播放" onclick="hello1()" />
+		 <input type="button" value="播放" id="btn1" onclick="hello1()" />
 		 <input type="button" value="暂停" onclick="hello2()" />
 		 <input type="button" value="设置进度" onclick="hello3()" />
 		 <input type="button" value="静音" onclick="hello4()" />
