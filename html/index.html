@@ -113,15 +113,21 @@
 				transform: scale(1.1);
 			}
 		</style>
-		<script src="/jquery-1.8.3.min.js"></script>
-		<script type="text/javascript">
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script type="module">
+		
+			$('.tag_xia').on('click',nextpage);
+			$('#bg').on('mousewheel',nextpage);
+			$('.tag_shang').on('click',backpage);
+			$('#page').on('mousewheel',backpage);
+			
 			function nextpage(){
-				document.getElementById("bg").style.top="-100%";
-				document.getElementById("page").style.top="0%";
+				$("#bg").css("top","-100%");
+				$("#page").css("top","0%");
 			}
 			function backpage(){
-				document.getElementById("bg").style.top="0%";
-				document.getElementById("page").style.top="100%";
+				$("#bg").css("top","0%");
+				$("#page").css("top","100%");
 			}
 		</script>
 		
@@ -129,13 +135,13 @@
 	</head>
 
 	<body>
-		<div id="bg" onmousewheel="nextpage()">
+		<div id="bg">
 			<div class="title_font">文明游戏,健康上网</div>
 			<a href="index-video.html"><img class="button" src="res/button.png" title="宣传视频"></a>
-			<img class="tag_xia" src="res/tag_xia.png" onclick="nextpage()" title="正反案例">
+			<img class="tag_xia" src="res/tag_xia.png" title="正反案例">
 		</div>
-		<div id="page" onmousewheel="backpage()">
-			<img class="tag_shang" src="res/tag_shang.png" onclick="backpage()" title="返回主页">
+		<div id="page">
+			<img class="tag_shang" src="res/tag_shang.png" title="返回主页">
 			<a href="index-boy.html"><img class="boy" src="res/boy_title.png" title="反面案例"></a>
 			<a href="index-edg.html"><img class="edg" src="res/edg_title.png" title="正面案例"></a>
 		</div>
