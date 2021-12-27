@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>打游戏暴怒合辑</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+		<div class="container">
+			<div class="box box1">
+				<video src="res/s1.mp4" autoplay="autoplay" loop="loop" muted="muted"></video>
+				<div class="content">
+					<h2>无能狂怒</h2>
+				</div>
+			</div>
+			<div class="box box2">
+				<video src="res/boy1.mp4" autoplay="autoplay" loop="loop" muted="muted"></video>
+				<div class="content">
+					<h2>乱摔乱骂</h2>
+				</div>
+			</div>
+			<div class="box box3">
+				<video src="res/s2.mp4" autoplay="autoplay" loop="loop" muted="muted"></video>
+				<div class="content">
+					<h2>情绪失控</h2>
+				</div>
+			</div>
+		</div>
+		<a href="index.html" class="pos">返回主页</a>
+		<script >
+			let box=document.querySelectorAll(".box");
+			box.forEach(popup=>popup.addEventListener("click",()=>{
+				popup.classList.toggle('active')
+			}))
+		</script>
+	</body>
+</html>
